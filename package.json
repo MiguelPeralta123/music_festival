@@ -1,0 +1,23 @@
+{
+  "name": "music_festival",
+  "version": "1.0.0",
+  "description": "Gulp, SASS & HTML project",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelPeralta123/music_festival.git"
+  },
+  "author": "Miguel Peralta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiguelPeralta123/music_festival/issues"
+  },
+  "homepage": "https://github.com/MiguelPeralta123/music_festival#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "sass": "^1.58.3"
+  }
+}
