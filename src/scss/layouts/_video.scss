@@ -1,0 +1,57 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    /* Position relative and absolute are for position the overlay class over the video class */
+    position: relative;
+
+    /* If the video´s height grows more than 70rem, the exceding part of the video will hide */
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;
+
+    .overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        // This gradiend was generated using cssgradient.io
+        background: rgb(255,70,148);
+        background: linear-gradient(100deg, rgba(255,70,148,0.3007915567282322) 20%, rgba(255,0,107,0.3) 80%);
+        // Centering the content vertically
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    video {
+        // This display is for make the video fill the entire screen
+        display: block;
+        
+        // The video will have a min-height
+        width: auto;
+        @include m.desktop {
+            width: 100%;
+        }
+    }
+}
+
+.video__content {
+    /* This sets video__content on top of everything */
+    z-index: 1;
+
+    h2 {
+        color: v.$white;
+        font-size: 7rem;
+        margin: 0;
+    }
+    
+    p {
+        background-color: v.$pink;
+        color: v.$white;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 2.4rem;
+        padding: 1rem 2rem;
+        margin: 0;
+    }
+}
