@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <!-- This css file is created from a scss file (scr/scss/app.scss). Open a terminal and run the script "npm run sass". This script is defined in the package.json file (--watch is used to rebuild the css file every time app.scss is modified without running the script again) -->
+    <!-- This css file is created from a scss file (scr/scss/app.scss). Open a terminal and run the script "npm run dev". This script is defined in the package.json file (--watch is used to rebuild the css file every time app.scss is modified without running the script again) -->
     <link rel="stylesheet" href="build/css/app.css" />
   </head>
   <body>
@@ -30,30 +30,104 @@
     <div class="video">
       <div class="overlay">
         <div class="container video__content">
-            <h2>Rock & EDM Festival</h2>
-            <p>Hermosillo, Mexico</p>
+          <h2>Rock & EDM Festival</h2>
+          <p>Hermosillo, Mexico</p>
         </div>
       </div>
 
       <!-- The video must be muted so that all browsers will be able to autoplay it -->
       <video autoplay muted loop>
-        <source src="video/concierto.mp4" type="video/mp4" />
-        <source src="video/concierto.ogg" type="video/ogg" />
-        <source src="video/concierto.webm" type="video/webm" />
+        <source src="video/concert.mp4" type="video/mp4" />
+        <source src="video/concert.ogg" type="video/ogg" />
+        <source src="video/concert.webm" type="video/webm" />
       </video>
     </div>
 
     <section class="container festival__about">
       <div class="image">
-        <img src="img/imagen_vocalista.jpg" alt="Festival Singer Image">
+        <!-- First tries to use avif, then webp and finally jpg. To make it work, everything must be inside the picture tag -->
+        <picture>
+          <source srcset="build/img/singer_image.avif" type="image/avif" />
+          <source srcset="build/img/singer_image.webp" type="image/webp" />
+          <!-- Height and width are defined here so that the loading will be faster, then they´re resized with the css file -->
+          <img loading="lazy" src="build//img/singer_image.jpg" height="100" width="200" alt="Singer image" />
+        </picture>
       </div>
 
       <div class="festival__content">
         <h2>Rock and EDM Festival</h2>
         <p class="date">March 2023. Hermosillo, Mexico</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis laborum doloremque consequuntur. Illum molestias explicabo quibusdam commodi unde recusandae quisquam voluptatibus vel voluptate quam. Dolorum, optio molestias? Nobis, ipsum explicabo.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+          laborum doloremque consequuntur. Illum molestias explicabo quibusdam
+          commodi unde recusandae quisquam voluptatibus vel voluptate quam.
+          Dolorum, optio molestias? Nobis, ipsum explicabo.
+        </p>
       </div>
     </section>
 
+    <section class="lineup">
+
+      <h3>Line Up</h3>
+
+      <p class="day">Friday 24</p>
+      
+      <div class="stages_container container">
+
+        <div class="stage rock bg_yellow">
+          <p>Rock Stage</p>
+          <ul class="calendar">
+            <li>24:00 | <span>Metallica</span></li>
+            <li>22:00 | <span>Pearl Jam</span></li>
+            <li>20:00 | <span>KoRn</span></li>
+            <li>19:00 | <span>Muse</span></li>
+            <li>18:00 | <span>Breaking Benjamin</span></li>
+            <li>17:00 | <span>30 Seconds to Mars</span></li>
+          </ul>
+        </div> <!-- Rock stage -->
+
+        <div class="stage edm bg_green">
+          <p>EDM Stage</p>
+          <ul class="calendar">
+            <li>24:00 | <span>Deadmau5</span></li>
+            <li>22:00 | <span>Tiesto</span></li>
+            <li>20:00 | <span>Hardwell</span></li>
+            <li>19:00 | <span>Dash Berlin</span></li>
+            <li>18:00 | <span>Fedde Legrand</span></li>
+            <li>17:00 | <span>Audien</span></li>
+          </ul>
+        </div> <!-- EDM stage -->
+
+      </div> <!-- Stages container -->
+      
+      <div class="stages_container container">
+
+        <div class="stage rock bg_green">
+          <p>Rock Stage</p>
+          <ul class="calendar">
+            <li>24:00 | <span>Red Hot Chili Peppers</span></li>
+            <li>22:00 | <span>The Killers</span></li>
+            <li>20:00 | <span>Deftones</span></li>
+            <li>19:00 | <span>Limp Bizkit</span></li>
+            <li>18:00 | <span>Papa Roach</span></li>
+            <li>17:00 | <span>Lamb of God</span></li>
+          </ul>
+        </div> <!-- Rock stage -->
+
+        <div class="stage edm bg_yellow">
+          <p>EDM Stage</p>
+          <ul class="calendar">
+            <li>24:00 | <span>Paul Van Dyk</span></li>
+            <li>22:00 | <span>Armin Van Buuren</span></li>
+            <li>20:00 | <span>Above & Beyond</span></li>
+            <li>19:00 | <span>Eric Prydz</span></li>
+            <li>18:00 | <span>Ferry Corsten</span></li>
+            <li>17:00 | <span>Vini Vici</span></li>
+          </ul>
+        </div> <!-- EDM stage -->
+
+      </div> <!-- Stages container -->
+
+    </section>
   </body>
 </html>
